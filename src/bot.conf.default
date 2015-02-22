@@ -1,0 +1,11 @@
+irc.host=irc.twitch.tv
+irc.port=6667
+irc.user=
+irc.pass=
+
+sql.host=localhost
+sql.user=twitchbot
+sql.pass=
+sql.driver=mysql
+
+log4j.conf=
