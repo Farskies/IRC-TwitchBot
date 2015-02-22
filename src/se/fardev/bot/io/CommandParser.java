@@ -41,20 +41,4 @@ public class CommandParser {
 		message     = matcher.group(GROUP_MESSAGE);
 		return new IncomingCommand(prefix, type, destination, message);
 	}
-
-	public String getPrefix() {
-		return prefix;
-	}
-	
-	public String getType() {
-		return type;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public String getDestination() {
-		return destination;
-	}
 }
