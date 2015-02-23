@@ -1,4 +1,4 @@
-package se.fardev.bot.io;
+package se.fardev.bot.io.command;
 
 public class OutgoingCommand {
 	private final byte[] data;

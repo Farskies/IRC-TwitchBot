@@ -13,6 +13,10 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import se.fardev.bot.io.command.CommandParser;
+import se.fardev.bot.io.command.IncomingCommand;
+import se.fardev.bot.io.command.OutgoingCommand;
+
 public class IRCSocketChannel implements Runnable {
 	private final Logger log = LogManager.getLogger();
 	
@@ -129,7 +133,7 @@ public class IRCSocketChannel implements Runnable {
 					}
 				}
 				
-				char[] buffer = new char[1024];
+				char[] buffer = new char[128];
 				int bytesRead = 0;
 				try {
 					if((bytesRead = inputStreamReader.read(buffer, 0, buffer.length)) > 0) {

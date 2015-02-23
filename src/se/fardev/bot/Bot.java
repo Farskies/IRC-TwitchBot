@@ -5,9 +5,9 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import se.fardev.bot.io.IncomingCommand;
 import se.fardev.bot.io.IRCSocketChannel;
-import se.fardev.bot.io.OutgoingCommand;
+import se.fardev.bot.io.command.IncomingCommand;
+import se.fardev.bot.io.command.OutgoingCommand;
 import se.fardev.bot.util.Config;
 
 public class Bot implements Runnable {
@@ -48,7 +48,7 @@ public class Bot implements Runnable {
 			socketChannel.writeOutgoing(OutgoingCommand.build("PASS", ircPass));
 			socketChannel.writeOutgoing(OutgoingCommand.build("NICK", ircUser));
 			socketChannel.writeOutgoing(OutgoingCommand.build("JOIN", "#esl_hearthstone"));
-			//socketChannel.writeOutgoing(OutgoingCommand.build("JOIN", "#fiftyseven__"));
+			socketChannel.writeOutgoing(OutgoingCommand.build("JOIN", "#massansc"));
 		}
 		logger.info("Bot successfully initialized");
 	}

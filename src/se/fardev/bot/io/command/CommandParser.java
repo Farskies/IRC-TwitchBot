@@ -1,4 +1,4 @@
-package se.fardev.bot.io;
+package se.fardev.bot.io.command;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,11 +18,6 @@ public class CommandParser {
 	private final String regex = "^(?:[:](\\S+) )?(\\S+)(?: (?!:)(.+?))?(?: [:]{0,}([\\+|\\-]{0,}.+))?$";
 	private final Pattern pattern;
 	
-	private String prefix;
-	private String type;
-	private String destination;
-	private String message;
-	
 	public CommandParser() {
 		pattern = Pattern.compile(regex);
 	}
@@ -35,10 +30,10 @@ public class CommandParser {
 			return null;
 		}
 		
-		prefix      = matcher.group(GROUP_PREFIX);
-		type        = matcher.group(GROUP_TYPE);
-		destination = matcher.group(GROUP_DESTINATION);
-		message     = matcher.group(GROUP_MESSAGE);
+		String prefix      = matcher.group(GROUP_PREFIX);
+		String type        = matcher.group(GROUP_TYPE);
+		String destination = matcher.group(GROUP_DESTINATION);
+		String message     = matcher.group(GROUP_MESSAGE);
 		return new IncomingCommand(prefix, type, destination, message);
 	}
 }
